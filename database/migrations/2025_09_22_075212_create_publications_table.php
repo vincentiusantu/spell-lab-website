@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('abstract');
             $table->string('keywords');
             $table->string('link');
-            $table->foreign('member_id')->reference('id')->on('members')->onDelete('cascade');
+            $table->unsignedBigInteger('member_id');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
             $table->string('category');
             $table->string('publisher');
             $table->string('year');
